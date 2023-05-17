@@ -31,8 +31,8 @@ jobs:
 
       - name: Download and run inso cli
         run: |
-          wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz,
-          tar -xf inso-linux-3.14.0.tar.xz,  
+          wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
+          tar -xf inso-linux-3.14.0.tar.xz  
           inso --version
           
       # Runs a set of commands using the runners shell
