@@ -29,9 +29,12 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: Download inso cli
-        run: wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
-        
+      - name: Download and run inso cli
+        run: |
+          wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz,
+          tar -xf inso-linux-3.14.0.tar.xz,  
+          inso --version
+          
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
