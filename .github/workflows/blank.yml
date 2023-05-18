@@ -29,16 +29,16 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: Download and run inso cli
-        run: |
-          # Download inso package from github
-          wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
+#       - name: Download and run inso cli
+#         run: |
+#           # Download inso package from github
+#           wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
           
-          # Install the dwonloaded package
-          tar -xf inso-linux-3.14.0.tar.xz  
+#           # Install the dwonloaded package
+#           tar -xf inso-linux-3.14.0.tar.xz  
           
-          # Checking the inso version
-          ./inso --version
+#           # Checking the inso version
+#           ./inso --version
           
       - name: Validate a spec using Inso
         run: |
@@ -51,6 +51,29 @@ jobs:
           # Output deck yaml
           cat Spec/deck.yaml
           cat Spec/deck.yaml > Spec/spec1.yaml
+          
+      - name: Download and run deck
+        run: |
+          # Download deck package from github
+          curl -sL https://github.com/kong/deck/releases/download/v1.19.1/deck_1.19.1_linux_amd64.tar.gz -o deck.tar.gz
+          
+          # Install the downloaded package
+          tar -xf deck.tar.gz -C /tmp  
+          
+          # Checking the inso version
+          sudo cp /tmp/deck /usr/local/bin/
+      
+      - name: Convert the spec to version 3
+        run: |
+          # Convert to v-3
+          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Spec/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password"
+
+#          # Converting spec to Kong Config
+#          ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
+          
+#          # Output deck yaml
+#          cat Spec/deck.yaml
+#          cat Spec/deck.yaml > Spec/spec1.yaml
           
       - name: Commit files
         id: commit
