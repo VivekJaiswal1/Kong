@@ -40,17 +40,17 @@ jobs:
 #           # Checking the inso version
 #           ./inso --version
           
-      - name: Validate a spec using Inso
-        run: |
-          # Linting the spec
-          ./inso lint spec Spec/spec.yaml
+#       - name: Validate a spec using Inso
+#         run: |
+#           # Linting the spec
+#           ./inso lint spec Spec/spec.yaml
           
-          # Converting spec to Kong Config
-          ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
+#           # Converting spec to Kong Config
+#           ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
           
-          # Output deck yaml
-          cat Spec/deck.yaml
-          cat Spec/deck.yaml > Spec/spec1.yaml
+#           # Output deck yaml
+#           cat Spec/deck.yaml
+#           cat Spec/deck.yaml > Spec/spec1.yaml
           
       - name: Download and run deck
         run: |
