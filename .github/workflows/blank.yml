@@ -67,20 +67,13 @@ jobs:
         run: |
           # Convert to v-3
           deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Spec/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
-
-#          # Converting spec to Kong Config
-#          ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
-          
-#          # Output deck yaml
-#          cat Spec/deck.yaml
-#          cat Spec/deck.yaml > Spec/spec1.yaml
           
       - name: Commit files
         id: commit
         run: |
           git config --local user.email "jaiswalvivek316@gmail.com"
           git config --local user.name "VivekJaiswal1"
-          git add --all
+          git add \*.yaml
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
