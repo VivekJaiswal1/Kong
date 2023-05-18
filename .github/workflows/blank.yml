@@ -47,7 +47,10 @@ jobs:
           
           # Converting spec to Kong Config
           ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
-         
+          
+          # Output deck yaml
+          cat Spec/deck.yaml
+          
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
