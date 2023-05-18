@@ -43,10 +43,10 @@ jobs:
       - name: Validate a spec using Inso
         run: |
           # Linting the spec
-          #./inso lint spec Spec/spec.yaml
+          ./inso lint spec Spec/spec.yaml
           
           # Converting spec to Kong Config
-          #./inso generate config Spec/spec.yaml -o Spec/deck.yaml
+          ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
           
           # Output deck yaml
           cat Spec/spec.yaml > Spec/spec1.yaml
