@@ -29,16 +29,16 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-#       - name: Download and run inso cli
-#         run: |
-#           # Download inso package from github
-#           wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
+      - name: Download and run inso cli
+        run: |
+          # Download inso package from github
+          wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
           
-#           # Install the dwonloaded package
-#           tar -xf inso-linux-3.14.0.tar.xz  
+          # Install the dwonloaded package
+          tar -xf inso-linux-3.14.0.tar.xz  
           
-#           # Checking the inso version
-#           ./inso --version
+          # Checking the inso version
+          ./inso --version
           
       - name: Validate a spec using Inso
         run: |
@@ -49,7 +49,8 @@ jobs:
           ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
           
           # Output deck yaml
-          cat Spec/spec.yaml > Spec/spec1.yaml
+          cat Spec/deck.yaml
+          cat Spec/deck.yaml > Spec/spec1.yaml
           
       - name: Commit files
         id: commit
