@@ -61,7 +61,7 @@ jobs:
           #tar -xf deck.tar.gz -C /tmp  
           
           # Checking the inso version
-          sudo cp /tmp/deck /usr/local/bin/
+          #sudo cp /tmp/deck /usr/local/bin/
       
       - name: Convert the spec to version 3
         run: |
