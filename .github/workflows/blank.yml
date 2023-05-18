@@ -66,7 +66,7 @@ jobs:
       - name: Convert the spec to version 3
         run: |
           # Convert to v-3
-          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Spec/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password"
+          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Spec/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
 
 #          # Converting spec to Kong Config
 #          ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
