@@ -49,7 +49,7 @@ jobs:
           #./inso generate config Spec/spec.yaml -o Spec/deck.yaml
           
           # Output deck yaml
-          cat Spec/spec.yaml -o Spec/spec1.yaml
+          cat Spec/spec.yaml > Spec/spec1.yaml
           
       - name: Commit files
         id: commit
