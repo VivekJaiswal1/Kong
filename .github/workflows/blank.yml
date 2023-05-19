@@ -73,7 +73,7 @@ jobs:
         run: |
           git config --local user.email "jaiswalvivek316@gmail.com"
           git config --local user.name "VivekJaiswal1"
-          git add \kongDemo3.yaml
+          git add Deck/kongDemo3.yaml
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
