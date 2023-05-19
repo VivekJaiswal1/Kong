@@ -39,10 +39,10 @@ jobs:
       - name: Validate a spec using Inso
         run: |
           # Linting the spec
-          ./inso lint spec Spec/spec.yaml
+          ./inso lint spec Spec/\*.yaml
           
           # Converting spec to Kong Config
-          ./inso generate config Spec/spec.yaml -o Deck/deckConfig.yaml
+          ./inso generate config Spec/\*.yaml -o Deck/deckConfig.yaml
           
           # Output deck yaml
           cat Deck/deckConfig.yaml
@@ -60,14 +60,14 @@ jobs:
       - name: Convert the spec to version 3
         run: |
           # Convert to v-3
-          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Deck/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
+          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Deck/deckConfig.yaml --output-file Deck/deckConfig3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
           
       - name: Commit files
         id: commit
         run: |
           git config --local user.email "jaiswalvivek316@gmail.com"
           git config --local user.name "VivekJaiswal1"
-          git add Deck/kongDemo3.yaml Deck/deckConfig.yaml
+          git add Deck/deckConfig3.yaml Deck/deckConfig.yaml
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
