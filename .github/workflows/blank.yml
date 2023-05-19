@@ -60,7 +60,7 @@ jobs:
       - name: Convert the spec to version 3
         run: |
           # Convert to v-3
-          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Deck/deckConfig.yaml --output-file Deck/deckConfig3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
+          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Deck/deckConfig.yaml --output-file Deck3/deckConfig3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
           
       - name: Commit files
         id: commit
