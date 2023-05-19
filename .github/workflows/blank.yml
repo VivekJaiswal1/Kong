@@ -42,7 +42,7 @@ jobs:
           ./inso lint spec Spec/spec.yaml
           
           # Converting spec to Kong Config
-          ./inso generate config Spec/\*.yaml -o Deck/deckConfig.yaml
+          ./inso generate config Spec/spec.yaml -o Deck/deckConfig.yaml
           
           # Output deck yaml
           cat Deck/deckConfig.yaml
