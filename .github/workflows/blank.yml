@@ -25,32 +25,27 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-#       - name: Download and run inso cli
-#         run: |
-#           # Download inso package from github
-#           wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
+      - name: Download and run inso cli
+        run: |
+          # Download inso package from github
+          wget https://github.com/Kong/insomnia/releases/download/lib%403.14.0/inso-linux-3.14.0.tar.xz
           
-#           # Install the dwonloaded package
-#           tar -xf inso-linux-3.14.0.tar.xz  
+          # Install the dwonloaded package
+          tar -xf inso-linux-3.14.0.tar.xz  
           
-#           # Checking the inso version
-#           ./inso --version
+          # Checking the inso version
+          ./inso --version
           
-#       - name: Validate a spec using Inso
-#         run: |
-#           # Linting the spec
-#           ./inso lint spec Spec/spec.yaml
+      - name: Validate a spec using Inso
+        run: |
+          # Linting the spec
+          ./inso lint spec Spec/spec.yaml
           
-#           # Converting spec to Kong Config
-#           ./inso generate config Spec/spec.yaml -o Spec/deck.yaml
+          # Converting spec to Kong Config
+          ./inso generate config Spec/spec.yaml -o Deck/deckConfig.yaml
           
-#           # Output deck yaml
-#           cat Spec/deck.yaml
-#           cat Spec/deck.yaml > Spec/spec1.yaml
+          # Output deck yaml
+          cat Deck/deckConfig.yaml
           
       - name: Download and run deck
         run: |
@@ -60,7 +55,6 @@ jobs:
           # Install the downloaded package
           tar -xf deck.tar.gz -C /tmp  
           
-          # Checking the inso version
           sudo cp /tmp/deck /usr/local/bin/
       
       - name: Convert the spec to version 3
@@ -73,7 +67,7 @@ jobs:
         run: |
           git config --local user.email "jaiswalvivek316@gmail.com"
           git config --local user.name "VivekJaiswal1"
-          git add Deck/kongDemo3.yaml
+          git add Deck/kongDemo3.yaml Deck/deckConfig.yaml
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
