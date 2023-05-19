@@ -66,14 +66,14 @@ jobs:
       - name: Convert the spec to version 3
         run: |
           # Convert to v-3
-          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Spec/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
+          deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file Spec/kongDemo.yaml --output-file Deck/kongDemo3.yaml --kong-addr "http://65.2.9.170:8001" --headers "kong-admin-token:password" --yes
           
       - name: Commit files
         id: commit
         run: |
           git config --local user.email "jaiswalvivek316@gmail.com"
           git config --local user.name "VivekJaiswal1"
-          git add \*.yaml
+          git add \kongDemo3.yaml
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
