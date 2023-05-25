@@ -51,9 +51,11 @@ jobs:
         run: |
           # Downloading portal cli
           npm install -g kong-portal-cli
+          echo Downloaded
           
           # Clone the template repo with all the files
           git clone https://github.com/kong/kong-portal-templates.git
+          echo cloned
           
           # Copy the spec to this template structure
           sudo cp Spec/spec.yaml kong-portal-templates/workspaces/default/specs/spec.yaml
