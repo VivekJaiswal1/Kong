@@ -46,6 +46,20 @@ jobs:
           
           # Output deck yaml
           cat Deck/deckConfig.yaml
+      
+      - name: Publish spec to dev portal 
+        run: |
+          # Downloading portal cli
+          npm install -g kong-portal-cli
+          
+          # Clone the template repo with all the files
+          git clone https://github.com/kong/kong-portal-templates.git
+          
+          # Copy the spec to this template structure
+          sudo cp Spec/spec.yaml kong-portal-templates/workspaces/default/specs/spec.yaml
+          
+          # Publish the spec to dev portal
+          KONG_ADMIN_URL=https://52.66.151.195:8444 KONG_ADMIN_TOKEN=password portal deploy -D default --preserve
           
       - name: Download and run deck
         run: |
