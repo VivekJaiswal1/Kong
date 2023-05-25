@@ -58,6 +58,7 @@ jobs:
           echo cloned
           
           # Copy the spec to this template structure
+          ls /home/runner/work/Kong/Kong/workspaces
           sudo cp Spec/spec.yaml kong-portal-templates/workspaces/default/specs/spec.yaml
           
           # Publish the spec to dev portal
