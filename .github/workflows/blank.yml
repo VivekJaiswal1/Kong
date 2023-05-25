@@ -58,11 +58,12 @@ jobs:
           echo cloned
           
           # Copy the spec to this template structure
-          
           sudo cp Spec/spec.yaml kong-portal-templates/workspaces/default/specs/spec.yaml
+          echo copied
           
           # Publish the spec to dev portal
           KONG_ADMIN_URL=https://52.66.151.195:8444 KONG_ADMIN_TOKEN=password portal deploy -D default --preserve
+          echo published
           
       - name: Download and run deck
         run: |
