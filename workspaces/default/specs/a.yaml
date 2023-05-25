@@ -1,1 +1,39 @@
-
+---
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Test JSON API
+  description: A sample API to illustrate OpenAPI concepts
+servers:
+- url: https://52.66.151.195:8443/
+  description: Kong Proxy
+paths:
+  "/stock2":
+    get:
+      responses:
+        '200':
+          description: Developers
+          content:
+            application/json:
+              examples:
+                Jessica:
+                  value:
+                    id: 10
+                    name: Hao
+                Ron:
+                  value:
+                    id: 20
+                    name: Sasha
+        '500':
+          description: Developers
+          content:
+            application/json:
+              examples:
+                Jessica5:
+                  value:
+                    id: 101
+                    name: Hao
+                Ron5:
+                  value:
+                    id: 201
+                    name: Sasha
