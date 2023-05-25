@@ -84,7 +84,9 @@ jobs:
         run: |
           git config --local user.email "jaiswalvivek316@gmail.com"
           git config --local user.name "VivekJaiswal1"
-          git add Deck3/deckConfig3.yaml Deck/deckConfig.yaml kong-portal-templates/workspaces/default/specs/spec.yaml
+          git rm --cached kong-portal-templates
+          git add Deck3/deckConfig3.yaml Deck/deckConfig.yaml 
+          git add kong-portal-templates/workspaces/default/specs/spec.yaml
           # workspaces/default/specs/spec.yaml
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
