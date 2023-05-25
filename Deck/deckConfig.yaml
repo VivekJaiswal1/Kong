@@ -1,6 +1,6 @@
 _format_version: "1.1"
 services:
-  - name: Margins_calculation_service
+  - name: Margin
     protocol: https
     host: mocktarget.apigee.net
     port: 443
@@ -15,14 +15,14 @@ services:
           &a1
           - OAS3_import
           - OAS3file_spec.yaml
-        name: Margins_calculation_service-LCRMReport
+        name: Margin-LCRMReport
         methods:
           - POST
         paths:
           - /MarginsCalculator/LCRMReport$
         strip_path: false
       - tags: *a1
-        name: Margins_calculation_service-LCRMReportFile
+        name: Margin-LCRMReportFile
         methods:
           - GET
         paths:

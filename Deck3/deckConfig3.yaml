@@ -1,7 +1,7 @@
 _format_version: "3.0"
 services:
 - host: mocktarget.apigee.net
-  name: Margins_calculation_service
+  name: Margin
   path: /Sandbox/v1.1/json
   plugins:
   - name: basic-auth
@@ -13,7 +13,7 @@ services:
   routes:
   - methods:
     - POST
-    name: Margins_calculation_service-LCRMReport
+    name: Margin-LCRMReport
     paths:
     - ~/MarginsCalculator/LCRMReport$
     strip_path: false
@@ -22,7 +22,7 @@ services:
     - OAS3file_spec.yaml
   - methods:
     - GET
-    name: Margins_calculation_service-LCRMReportFile
+    name: Margin-LCRMReportFile
     paths:
     - ~/MarginsCalculator/LCRMReportFile$
     strip_path: false
