@@ -96,7 +96,7 @@ jobs:
           
           # git rm --cached kong-portal-templates
 
-          # git add kong-portal-templates/workspaces/default/specs/spec.yaml
+          git add workspaces/default/specs/spec.yaml
           
           # workspaces/default/specs/spec.yaml
           if [-z "$(git status --porcelain)"]; then
