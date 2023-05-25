@@ -86,12 +86,12 @@ jobs:
           git config --local user.name "VivekJaiswal1"
           git add Deck3/deckConfig3.yaml Deck/deckConfig.yaml 
           
-          git submodule init 
-          git submodule update
+          # git submodule init 
+          # git submodule update
           
-          git rm -f --cached kong-portal-templates
+          # git rm -f --cached kong-portal-templates
 
-          git add kong-portal-templates
+          # git add kong-portal-templates
           
           # git rm --cached kong-portal-templates
 
