@@ -54,11 +54,11 @@ jobs:
           echo Downloaded
           
           # Clone the template repo with all the files
-          git clone https://github.com/kong/kong-portal-templates.git
-          echo cloned
+          #git clone https://github.com/kong/kong-portal-templates.git
+          #echo cloned
           
           # Copy the spec to this template structure
-          sudo cp Spec/spec.yaml kong-portal-templates/workspaces/default/specs/spec.yaml
+          sudo cp Spec/spec.yaml workspaces/default/specs/spec.yaml
           echo copied
           
           # Publish the spec to dev portal
