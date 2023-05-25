@@ -89,7 +89,7 @@ jobs:
           # git submodule init 
           # git submodule update
           
-          # git rm -f --cached kong-portal-templates
+          git rm -f --cached kong-portal-templates
 
           # git add kong-portal-templates
           
