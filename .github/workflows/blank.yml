@@ -64,7 +64,7 @@ jobs:
           echo copied
           
           # Publish the spec to dev portal
-          KONG_ADMIN_URL=https://3.6.90.209:8444 KONG_ADMIN_TOKEN=password portal deploy -D default --preserve
+          #KONG_ADMIN_URL=https://3.6.90.209:8444 KONG_ADMIN_TOKEN=password portal deploy -D default --preserve
           echo published
           
       - name: Download and run deck
