@@ -44,6 +44,7 @@ jobs:
           
           # view spec
           cat testing.yaml
+          sudo cp testing.yaml Spec/testing.yaml
           
           # Converting spec to Kong Config
           #./inso generate config Spec/spec.yaml -o Deck/deckConfig.yaml
