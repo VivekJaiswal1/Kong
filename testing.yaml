@@ -2,7 +2,7 @@ openapi: 3.0.0
 
 info:
 
-  title: NAMyServiceAPIApigee1
+  title: NAMyServiceAPIApigee
 
   version: 1.0.0
 
